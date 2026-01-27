@@ -1,7 +1,7 @@
 # ChemTool
 
 **ChemTool** is a RESTful API designed to provide common thermodynamic utilities for Chemical Engineers. 
-The main objective of this repository is to build functional software while mastering the fundamentals of **Java Spring Boot**, **PostgreSQL**, and modern **Software Architecture**.
+The main objective of this repository is to build functional software while mastering the fundamentals of **Java Spring Boot**, **PostgreSQL**,**TypeScript/Node.js**, and modern **Software Architecture**.
 
 ## Project Objective
 
