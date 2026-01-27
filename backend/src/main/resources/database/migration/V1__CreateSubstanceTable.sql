@@ -1,0 +1,5 @@
+CREATE TABLE substance
+(
+    name    VARCHAR(255) NOT NULL PRIMARY KEY,
+    formula VARCHAR(255) NOT NULL UNIQUE
+);
