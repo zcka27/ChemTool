@@ -27,8 +27,11 @@ The project follows a Layered Architecture pattern to ensure separation of conce
 ```
 src/main/java/com/chemicaltools/chemicaltools
 ├── controller
+│   ├── AdminController.java
 │   └── AntoineController.java
 ├── exception
+│   ├── CSVUploadException.java
+│   ├── CSVValidationException.java
 │   ├── SubstanceNotFoundException.java
 │   └── TemperatureOutRangeException.java
 ├── model
@@ -37,6 +40,9 @@ src/main/java/com/chemicaltools/chemicaltools
 ├── repository
 │   └── SubstanceRepository.java
 ├── service
+│   ├── importers
+│   │   ├── AntoinePropertiesImporter.java
+│   │   └── CSVImporter.java
 │   └── AntoineService.java
 └── ChemicalToolsApplication.java
 ```
