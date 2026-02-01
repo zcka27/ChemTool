@@ -33,7 +33,7 @@ public class AntoineService {
      *
      */
     public Double calculateAntoineVaporPressure(String substance, Double temperature) {
-        String normalizedSubstance = substance.toLowerCase().trim();
+        String normalizedSubstance = substance.toUpperCase().trim();
         Optional<Substance> searchResult = substanceRepository.findByName(normalizedSubstance);
         if (searchResult.isEmpty()) {
             searchResult = substanceRepository.findByFormula(normalizedSubstance);
