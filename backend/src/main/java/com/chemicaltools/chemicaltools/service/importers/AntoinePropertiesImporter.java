@@ -1,8 +1,8 @@
 package com.chemicaltools.chemicaltools.service.importers;
 
 import com.chemicaltools.chemicaltools.exception.CSVValidationException;
-import com.chemicaltools.chemicaltools.model.AntoineProperties;
-import com.chemicaltools.chemicaltools.model.Substance;
+import com.chemicaltools.chemicaltools.model.entity.AntoineProperties;
+import com.chemicaltools.chemicaltools.model.entity.Substance;
 import com.chemicaltools.chemicaltools.repository.SubstanceRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;

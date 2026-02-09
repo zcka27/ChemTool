@@ -1,4 +1,4 @@
- package com.chemicaltools.chemicaltools.model;
+ package com.chemicaltools.chemicaltools.model.entity;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.OneToOne;
@@ -21,7 +21,7 @@ public class Substance {
      * OneToOne relationship with AntoineProperties
      * Each substance can have a bunch of termo properties
      *
-     * @OneToOne: Define a one by one relation between identities
+     * OneToOne: Define a one by one relation between identities
      * - mappedBy: "substance" identifies that foreign key will be
      *  found at AntoineProperties
      */

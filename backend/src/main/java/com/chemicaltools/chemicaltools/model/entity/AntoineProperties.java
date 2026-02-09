@@ -1,4 +1,4 @@
-package com.chemicaltools.chemicaltools.model;
+package com.chemicaltools.chemicaltools.model.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;

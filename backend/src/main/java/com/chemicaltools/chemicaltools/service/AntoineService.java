@@ -2,11 +2,12 @@ package com.chemicaltools.chemicaltools.service;
 
 import com.chemicaltools.chemicaltools.exception.SubstanceNotFoundException;
 import com.chemicaltools.chemicaltools.exception.TemperatureOutRangeException;
-import com.chemicaltools.chemicaltools.model.AntoineProperties;
-import com.chemicaltools.chemicaltools.model.Substance;
+import com.chemicaltools.chemicaltools.model.entity.AntoineProperties;
+import com.chemicaltools.chemicaltools.model.entity.Substance;
 import com.chemicaltools.chemicaltools.repository.SubstanceRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -54,6 +55,24 @@ public class AntoineService {
 
         return Math.pow(10, exponent);
 
+    }
+    public List<Substance> searchSubstances(String substance){
+        String normalizedSubstance = substance.toUpperCase().trim();
+        Optional<Substance> searchResult = substanceRepository.findByName(normalizedSubstance);
+        if(searchResult.isEmpty()){
+            searchResult = substanceRepository.findByFormula(normalizedSubstance);
+        }
+        if(searchResult.isEmpty()){
+            throw new SubstanceNotFoundException("Substance not found.");
+        }
+        Substance substanceFound = searchResult.get();
+//        AntoineProperties properties = substanceFound.getAntoineProperties();
+
+        /*
+         * Substance has a 1:1 relation with AntoineProperties. It will return the name and formula
+         * and properties aswell.
+         */
+        return List.of(substanceFound);
     }
 }
 
