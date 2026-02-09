@@ -35,8 +35,11 @@ src/main/java/com/chemicaltools/chemicaltools
 │   ├── SubstanceNotFoundException.java
 │   └── TemperatureOutRangeException.java
 ├── model
-│   ├── AntoineProperties.java
-│   └── Substance.java
+│   ├── dto
+│   │   └── AntoinePropertiesDTO.java
+│   └── entity
+│       ├── AntoineProperties.java
+│       └── Substance.java
 ├── repository
 │   └── SubstanceRepository.java
 ├── service
