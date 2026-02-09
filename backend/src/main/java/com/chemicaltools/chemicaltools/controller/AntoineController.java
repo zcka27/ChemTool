@@ -1,5 +1,8 @@
 package com.chemicaltools.chemicaltools.controller;
 
+import com.chemicaltools.chemicaltools.model.dto.AntoinePropertiesDTO;
+import com.chemicaltools.chemicaltools.model.entity.AntoineProperties;
+import com.chemicaltools.chemicaltools.model.entity.Substance;
 import com.chemicaltools.chemicaltools.service.AntoineService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -7,7 +10,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -33,5 +38,16 @@ public class AntoineController {
         response.put("vaporPressure_mmHg", vaporPressure);
         response.put("status", "success");
         return ResponseEntity.ok(response);
+    }
+    @GetMapping("/search")
+    public ResponseEntity<List<AntoinePropertiesDTO>> searchSubstance(@RequestParam String substance) {
+        List<Substance> substancesFound = antoineService.searchSubstances(substance);
+        List<AntoinePropertiesDTO> dtos = new ArrayList<>();
+        for(Substance s : substancesFound){
+            AntoineProperties antoineProperties = s.getAntoineProperties();
+            AntoinePropertiesDTO dto = new AntoinePropertiesDTO(antoineProperties);
+            dtos.add(dto);
+        }
+        return ResponseEntity.ok(dtos);
     }
 }

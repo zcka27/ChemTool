@@ -1,6 +1,6 @@
 package com.chemicaltools.chemicaltools.repository;
 
-import com.chemicaltools.chemicaltools.model.Substance;
+import com.chemicaltools.chemicaltools.model.entity.Substance;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
